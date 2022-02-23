@@ -63,29 +63,3 @@ export default class EmployeeListComponent extends Component {
     }
 }
 
-// function ChildComponent(props){
-//     if(props.name==""){
-//         return ( 
-//             <>
-//                 {props.empList.map(function(employee) {
-//                     return (
-//                         <EmployeeDetailsComponent {...employee}></EmployeeDetailsComponent>
-//                     )
-//                 })}
-//             </>         
-//         )
-//     }
-//     else{
-//         return (
-//             <>
-//                 {props.empList.map(function(employee) {
-//                     if(employee.name.includes(props.name)){
-//                     return (
-//                         <EmployeeDetailsComponent {...employee}></EmployeeDetailsComponent>
-//                     )
-//                     }
-//                 })}
-//             </>
-//         )
-//     }
-// }
