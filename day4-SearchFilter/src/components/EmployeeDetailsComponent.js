@@ -10,7 +10,7 @@ export default function EmployeeDetailsComponent(props) {
             borderBottomRightRadius: 15,
             borderTopRightRadius: 30,
             borderTopLeftRadius: 15,
-            background:"greenyellow"
+            background:"white"
         }, 
         imageStyling: {
             width: "96%",
