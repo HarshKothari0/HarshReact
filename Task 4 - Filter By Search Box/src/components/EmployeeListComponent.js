@@ -14,14 +14,14 @@ export default class EmployeeListComponent extends Component {
             name: event.target.value
         })
     }
-    ChildComponent=()=>{
+    Filter=()=>{
        
-        if(this.state.name==""){
+        if(this.state.name===""){
             return ( 
                 <>
                     {this.props.empList.map(function(employee) {
                         return (
-                            <EmployeeDetailsComponent {...employee}></EmployeeDetailsComponent>
+                            <EmployeeDetailsComponent key={employee.id} {...employee}></EmployeeDetailsComponent>
                         )
                     })}
                 </>         
@@ -33,7 +33,7 @@ export default class EmployeeListComponent extends Component {
                     {this.props.empList.map((employee)=> {
                         if(employee.name.includes(this.state.name)){
                         return (
-                            <EmployeeDetailsComponent {...employee}></EmployeeDetailsComponent>
+                            <EmployeeDetailsComponent key={employee.id} {...employee}></EmployeeDetailsComponent>
                         )
                         }
                     })}
@@ -45,18 +45,20 @@ export default class EmployeeListComponent extends Component {
         
     return (
         <div style={{margin:"0 20px",backgroundColor:"black"}} >
-                <table style={{margin:"auto"}}>
-                <tr>
-                <td>
-                <h2 style={{color:"white"}}>Enter name :   </h2>
-                </td>
-                <td>  
-                <input style={{height:"30px",width:"400px"}} onChange={this.nameChange} />
-                </td>
-                </tr>
-                </table>
+            <table style={{margin:"auto"}}>
+                <tbody>
+                    <tr>
+                        <td>
+                            <h2 style={{color:"white"}}>Enter name :   </h2>
+                        </td>
+                        <td>  
+                            <input style={{height:"30px",width:"400px"}} onChange={this.nameChange} />
+                            </td>
+                    </tr>
+                </tbody>
+            </table>
             <hr style={{border:"1px solid white"}}></hr>
-         {this.ChildComponent()} 
+            {this.Filter()} 
             
         </div>
     )
